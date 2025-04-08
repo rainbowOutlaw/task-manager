@@ -1,5 +1,6 @@
 const taskInput = document.querySelector('.input-bar');
 const inputbtn = document.querySelector('.input-btn');
+const clearbtn = document.querySelector('.clear-btn');
 const tasksList = document.querySelector('.container-tasks');
 
 const tasks = []
@@ -25,8 +26,16 @@ taskInput.addEventListener('keypress', function(event){
 
 inputbtn.addEventListener('click', () => {
     // console.log("Input Button Clicked");
-    addTask()
+    addTask();
 })
 
+clearbtn.addEventListener('click', () => {
 
+    const shouldClear = confirm("Are you sure you want to clear all tasks ?");
+
+    if(shouldClear){
+        tasks.length = 0;
+        tasksList.innerHTML = '';
+    }
+})
 
