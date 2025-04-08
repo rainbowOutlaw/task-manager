@@ -1,5 +1,6 @@
 const taskInput = document.querySelector('.input-bar');
 const inputbtn = document.querySelector('.input-btn');
+const tasksList = document.querySelector('.container-tasks');
 
 const tasks = []
 
@@ -9,7 +10,10 @@ function addTask(){
     if(taskValue !== ''){
         tasks.push(taskValue);
         taskInput.value = '';
-        console.log(tasks);
+        // console.log(tasks);
+        const newlistEle = document.createElement('li');
+        newlistEle.innerText = taskValue;
+        tasksList.appendChild(newlistEle);
     }
 }
 
