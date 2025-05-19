@@ -24,15 +24,51 @@
     background-color: #e0f2f1;
 }
 
+.input-bar{
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+}
+
+.btn{
+    color: white;
+    font-family: "Playpen Sans Thai", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0.1rem 0.25rem 0.1rem 0.25rem;
+    border-radius: 0.25rem;
+    border: 0;
+}
+
+.input-btn{
+    background-color: #10b981;
+}
+
+.clear-btn{
+    background-color: #f87171;
+}
 
 .input-btns{
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 5%;
+    gap: 3%;
+    position: relative;
     
 }
 
 .clear-btn{
     position: absolute;
+    top: 4rem;
+}
+
+
+.container{
+    margin-top: 2.5rem;
+    align-self: flex-start;
+    margin-left: 20rem;
+}
+
+.container-tasks{
+    list-style: none;
 }
