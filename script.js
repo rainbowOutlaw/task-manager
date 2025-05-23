@@ -19,6 +19,7 @@ function addTask(){
         const newlistEle = document.createElement('li');
         newlistEle.innerText = taskValue;
         tasksList.appendChild(newlistEle);
+        newlistEle.dataset.id = task.id;
     }
 }
 
