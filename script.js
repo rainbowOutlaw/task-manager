@@ -7,9 +7,13 @@ const tasks = []
 
 function addTask(){
     const taskValue = taskInput.value;
+    const task = {
+        id: crypto.randomUUID(),
+        text: taskValue,
+    }
 
     if(taskValue !== ''){
-        tasks.push(taskValue);
+        tasks.push(task);
         taskInput.value = '';
         // console.log(tasks);
         const newlistEle = document.createElement('li');
