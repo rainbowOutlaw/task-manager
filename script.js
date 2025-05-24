@@ -17,7 +17,7 @@ function addTask(){
         taskInput.value = '';
         // console.log(tasks);
         const newlistEle = document.createElement('li');
-        newlistEle.innerText = taskValue;
+        newlistEle.innerText = task.text;
         tasksList.appendChild(newlistEle);
         newlistEle.dataset.id = task.id;
     }
@@ -44,3 +44,11 @@ clearbtn.addEventListener('click', () => {
     }
 })
 
+
+tasksList.addEventListener('click', (event) => {
+    const clicked = event.target;
+    if(clicked.tagName === 'LI' && clicked.dataset.id){
+        const clickedId = clicked.dataset.id;
+        console.log(clickedId)
+    }
+})
