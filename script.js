@@ -3,7 +3,19 @@ const inputbtn = document.querySelector('.input-btn');
 const clearbtn = document.querySelector('.clear-btn');
 const tasksList = document.querySelector('.container-tasks');
 
-const tasks = []
+let tasks = []
+
+
+function renderTasks(){
+    tasksList.innerHTML = '';
+    for(i = 0; i < tasks.length; i++){
+        const task = tasks[i];
+        const newlistEle = document.createElement('li');
+        newlistEle.innerText = task.text;
+        newlistEle.dataset.id = task.id;
+        tasksList.appendChild(newlistEle);
+    }
+}
 
 function addTask(){
     const taskValue = taskInput.value;
@@ -16,12 +28,15 @@ function addTask(){
         tasks.push(task);
         taskInput.value = '';
         // console.log(tasks);
-        const newlistEle = document.createElement('li');
-        newlistEle.innerText = task.text;
-        tasksList.appendChild(newlistEle);
-        newlistEle.dataset.id = task.id;
+        // const newlistEle = document.createElement('li');
+        // newlistEle.innerText = task.text;
+        // tasksList.appendChild(newlistEle);
+        // newlistEle.dataset.id = task.id;
+        renderTasks();
     }
 }
+
+
 
 taskInput.addEventListener('keypress', function(event){
     if(event.key === 'Enter'){
@@ -50,6 +65,7 @@ tasksList.addEventListener('click', (event) => {
     const currTagElem = clicked.closest('li')
     if(currTagElem && currTagElem.tagName === 'LI'){
         const clickedId = currTagElem.dataset.id;
-        
+        tasks = tasks.filter(({id}) => id !== clickedId)
     }
+    renderTasks();
 })
