@@ -47,8 +47,9 @@ clearbtn.addEventListener('click', () => {
 
 tasksList.addEventListener('click', (event) => {
     const clicked = event.target;
-    if(clicked.tagName === 'LI' && clicked.dataset.id){
-        const clickedId = clicked.dataset.id;
-        console.log(clickedId)
+    const currTagElem = clicked.closest('li')
+    if(currTagElem && currTagElem.tagName === 'LI'){
+        const clickedId = currTagElem.dataset.id;
+        
     }
 })
